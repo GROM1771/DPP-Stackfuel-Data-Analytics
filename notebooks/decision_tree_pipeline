@@ -1,0 +1,24 @@
+// Decision Tree Machine Failure Pipeline
+digraph {
+	rankdir=LR size="16,20"
+	A [label="Machine & Sensor Data
+(Temperature, Speed, Torque, Wear, Type)" fillcolor="#AEDFF7" shape=box style=filled]
+	B [label="Data Preprocessing
+- Clean & Encode
+- Split (X, y)" fillcolor="#D6EAF8" shape=box style=filled]
+	C [label="Decision Tree (Binary)
+Target: Failure or Not" fillcolor="#A9DFBF" shape=ellipse style=filled]
+	D [label="Decision Tree (Multiclass)
+Target: Failure Type" fillcolor="#F9E79F" shape=ellipse style=filled]
+	E [label="Model Evaluation
+Accuracy, Recall, F1-Score
+Confusion Matrix" fillcolor="#FADBD8" shape=box style=filled]
+	F [label="Insights
+Feature Importance:
+Torque, Air Temp, Speed..." fillcolor="#E8DAEF" shape=box style=filled]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+}
